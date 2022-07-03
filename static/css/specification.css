@@ -1,0 +1,384 @@
+.page-content{
+    
+    min-height:100vh;
+    width: 100%;
+    margin-top: 30px;
+
+    padding: 0px;
+    color: #30373f;
+    }
+ 
+    
+*{
+	font-family:  "Roboto",sans-serif;
+	
+}
+  
+  .searchbtn .fa{
+      color: #fff;
+  }
+  .slider
+  { 
+    width:600px;
+    height:450px;
+    overflow: hidden;    
+
+  }
+  .slider1{
+  	margin-bottom: 30px;
+  }
+
+
+  .slider img
+  {
+   
+    width:70%;
+    height:400px;
+
+
+  }
+  .slider img :hover
+  {
+
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .slider-img 
+    {
+        display: flex;
+        height: 100px ;
+        justify-content: space-between;
+        margin-left: 57px;
+      
+        width: 50%; 
+    }  
+
+    .slider-img a
+    {
+      display: flex;
+      height: 90px;
+      border: 2px solid #f5f5f5;  
+      border-radius: 8px;
+      margin: 5px;
+    }
+    .slider-img div
+    {
+        width: 100%;
+        height: 100%;
+
+    }
+    .slider-img img{
+        height: 100%;
+        justify-content: space-between;
+
+    }
+    .slider-img .img a:hover
+    {
+      border-radius: 8px;
+      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+
+    }
+
+   .title
+   {
+   	font-size: 20px;
+   	font-weight: 600;
+   	padding-bottom: 10px;
+   }
+
+   .title:after
+   {
+    content: "";
+   	border-bottom: 3px solid rgba(0, 78, 100, 0.3);
+  	width:70%;
+  	display:block;
+  	padding-bottom: 3px;
+  }
+
+  .spec-details
+  {
+    font-size: 17px;
+    padding: 10px;
+    margin: 10px 10px 30px 0px;
+   
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;
+    border: 1px solid #f5f5f5;
+    display: flex; 
+}
+ 
+
+   table td, table th 
+   {
+    line-height:1.5;
+    vertical-align: top;
+    border-bottom: 2px solid #f5f5f5;
+    padding: 5px;
+    padding-bottom: 12px;
+  } 
+  
+  
+
+  /* REVIEW SECTION */
+.review-section
+{
+    display: flex;
+     width:100%;
+     margin-top: 20px;
+}
+.product-reviews
+{
+    width: 100%;
+
+}
+.review-rating
+{
+    
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+.reviews-form
+{
+    width: 50%;
+   
+    
+}
+.review-form
+{
+    margin-top: 12px;  
+   
+}
+
+.review-heading
+{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+.review-body
+{
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 1%;
+    
+}
+.votes
+{
+	margin-bottom: 4%;
+}
+.fa-user-o
+{
+    font-weight: 600;
+    color: #004e64;
+}
+
+.fa-clock-o
+{
+    margin-left: 10px;
+}
+
+.input
+{
+    border-radius: 10px;
+    height: 100px;
+    padding-left: 10px;
+    margin-left: 0px;
+}
+.stars input{
+    display: none;
+}
+.stars
+{
+    padding-left: 8px;
+    
+   }
+.stars label{
+   transition:all 0.2s ease;
+   float: right;
+   padding-right: 4px;
+   padding-top: 2px;
+   color:#d6e0ed ;
+   cursor: pointer;
+    
+}
+.stars label .fa{
+    color: #F8F8F8;
+}
+
+textarea:focus{
+    background-color: #F8F8F8;
+}
+
+
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label
+{
+	color:#FDCC0D;
+}
+
+input:checked ~ label
+{
+    color: #FDCC0D;
+}
+input#rate-5:checked ~label {
+    color: #FDCC0D;
+}
+
+.review-rating span .fa
+{
+    color: #FDCC0D;
+    
+}
+.review-rating span .far
+{
+    color: #FDCC0D;
+    
+}
+
+
+.review-rating1
+{
+	font-size: 30px;
+
+}
+
+.review-rating1 span .fa{
+    color: #FDCC0D;
+    
+}
+
+.review-rating1 span .far{
+    color: #FDCC0D;
+    
+}
+
+
+textarea {
+    border: 2px solid rgba(0, 78, 100, 0.3);
+    font-size: 13px;
+    outline: none;
+    padding-top: 8px;
+    
+}
+
+.btn-outline-primary{
+    outline: none;
+    border:none;
+    background-color: #004e64;
+     color:#d6e0ed;
+     padding: 10px;
+     border-radius: 10px;
+     cursor: pointer;
+     font-size: 14px;
+
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    box-shadow: 0 8px 6px -6px #004e64;
+    background-color: #004e64;
+  
+}
+
+.votes input{
+	width: 27px;
+	border:none;
+	background: none;
+	color: #30373f;
+	pointer-events: none;
+	font-size: 15px;
+
+
+}
+
+button{
+	color: #004e64;
+	background: none;
+	border:none;
+	font-size: 16px;
+	cursor: pointer;
+}
+button .fa{
+	color: #004e64;
+
+}
+button:focus, button:active{
+	outline:none;
+	color: rgba(0, 78, 100, 0.3)!important;
+	background:none;
+}
+ button .fa-thumbs-up:hover{
+ 	outline: none;
+ 	color: DodgerBlue;
+ }
+  button .fa-thumbs-down:hover{
+ 	outline: none;
+ 	color: #b30000;
+ }
+
+
+.slick-dots  > li {
+    display: inline-block;
+    padding-right:5px;
+    position: relative;
+   
+}
+
+
+    
+.slick-dots > li:only-child
+    {
+        display: none;
+
+    }
+
+.slick-dots  > li {
+	color: rgb(0,78,100,0.4)!important;
+}
+.slick-dots  > li >a{
+	position: relative;
+	top:-5px;
+	left: 13px;
+	z-index: 999;
+	font-size: 15px;
+	
+	padding: 7px;
+}
+
+.slick-dots li:hover{
+	text-decoration: underline;
+	color: #004e64!important;
+}
+
+
+.prev1 {
+	
+	position: absolute;
+    bottom:40px;
+	
+	cursor: pointer;
+	display: inline-block;
+	z-index: 1;
+	color: rgb(0,78,100,0.4)!important;
+	padding-right: 10px;
+
+}
+.next1{
+	
+	position: absolute;
+	bottom:40px;
+	right: 86%;
+	cursor: pointer;
+	display: inline-block;
+	z-index: 1;
+	color: rgb(0,78,100,0.5)!important;
+	
+
+}
+
+.prev1:hover, .next1:hover{
+	color:#004e64 !important;
+}
+
+

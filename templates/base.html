@@ -1,0 +1,179 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--Font Awesome-->
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script src="https://kit.fontawesome.com/300d3d470f.js" crossorigin="anonymous"></script>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	
+	
+	
+	
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	
+	
+
+	{% block styles %}
+
+
+
+	{% endblock %}
+
+
+	<title>Gadgetry Mantra</title>
+	{% block header %}
+	{% endblock %}
+</head>
+<body>
+	
+	
+	<header>
+		<div class="top-header">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-3 logo ">
+						<img src="{% static 'images/logo.png' %}" alt="logo">
+					</div>
+					<div class="col-md-7 pt-4 search">
+						<form class="search-bar" method="POST" action="{% url 'search' %}">
+							{% csrf_token %}
+		      				<input type="search" placeholder="Search...." name="searched">
+		      				<button class="searchbtn" type="submit" style="border:none;"><i class="fa fa-search" aria-hidden="true" ></i></button>
+		    			</form>
+					</div>
+					<div class="col-md-2 pt-4 fonts">
+						<ul>
+							{% if user.is_authenticated %}
+							<li><a href="{% url 'profile' %}">Profile</a></li>
+							<li><a href="{% url 'logoutUser' %}"><i class="fas fa-sign-out-alt"></i></a></li>
+							{% else %}
+							<li><a href="{% url 'loginPage' %}"><i class="fas fa-sign-in-alt"></i></a></li><li><a href="{% url 'register' %}"><i class="fas fa-user-plus"></i></a></li>
+							{% endif %}
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="bottom-header">
+			<div class="container">
+				<div class="row pt-3 pb-3">
+					<div class="col-md-3"></div>
+					<div class="col-md-9 advertise">
+						<a href="http://gadgetframe.com/" target="_blank">
+							<img src="{% static 'images/ads3.png' %}" alt="advertise" class="img-fluid">
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <!-- NAVIGATION BAR -->
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+		  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'smartphone' %}">Smartphones</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'laptop' %}">Laptops</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'smartwatch' %}">Smartwatches</a>
+		      </li>
+		     
+		    </ul>
+		    
+		  </div>
+	  </div>
+	</nav>
+
+	<!-- MAIN CONTENT -->
+	{% block content %}
+	
+	{% endblock %}
+
+
+	<!-- FOOTER -->
+
+	<footer>
+		<div class="top-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 logo">
+						<img src="{% static 'images/logo.png' %}">
+					</div>
+					<div class="col-md-4 about">
+						<h5>ABOUT US</h5>
+						<p>Gadgetry Mantra is your gadget companion featuring the best gadgets, their information along with personalized recommendations of gadgets.</p>
+					</div>
+					<div class="col-md-4 contact">
+						<ul>
+							<li><h5>CONTACT US</h5></li>
+							<li><span style="color: #d6e0ed; font-size:15px; font-weight:400;"><i class="fas fa-map-marker-alt"></i></span>&nbsp;&nbsp;<span style="font-family: 'Roboto', sans-serif !important; font-size:17px; font-weight:500;"> Lokanthali, Bhaktapur</span></li>
+							<li><span style="color: #d6e0ed; font-size:15px; font-weight:400;"><i class="fas fa-phone"></i></span>&nbsp;&nbsp;<span style="font-family: 'Roboto', sans-serif !important; font-size:17px; font-weight:500;">123-456-789</span></li>
+							<li><span style="color: #d6e0ed; font-size:15px; font-weight:400;"><i class="fas fa-envelope"></i></span>&nbsp;&nbsp;<span style="font-family: 'Roboto', sans-serif !important; font-size:17px; font-weight:500;">info@gadgetrymantra.com</span></li>
+						</ul>
+						<div class="socials">
+							<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+							<a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+							<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md copyright" style="font-family: 'Roboto', sans-serif !important; font-size:17px; font-weight:500;">
+						&copy; gadgetrymantra.com | Designed by BSP
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	
+	
+<!--  Bootstrap JavaScript -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% block scripts %}
+
+{% endblock %}
+</body>
+</html>

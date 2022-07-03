@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    .pagecontent
+    {
+        min-height: 1oovh;
+    }
+   .media{
+    background: #ffffff;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+   
+    margin-bottom: 20px;
+   
+   }
+ .account-heading{
+    font-size: 2 rem;
+
+
+ }
+ .profile-1{
+  border: 1px solid #dddddd;
+   
+  border-radius: 3px;
+
+
+ }
+    
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <div class="container">
+      <div class="profile-1">
+        <div class="edit-section" style="float: right; padding-right:5px;" ><a href={% url 'edit' %}>Edit</a></div>
+          <div class="media" >
+            
+            
+              <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="margin-right: 20px;width:140px;height:140px">
+              <div class="media-body">
+                <h2 class="account-heading">{{ user.username }}</h2>
+              
+                <p class="text-secondary">{{ user.email }}</p>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,566 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<!-- Slick css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/subpages.css' %}">
+
+{% endblock %}
+{% block content %}
+
+<!-- MAIN CONTENT -->
+
+	 <div class="page-content">
+		<div class="container">
+			<div class="row" style="column-count: 2; column-gap:20px;">
+				<div class="col-md-3 phone-finder-box">
+					<div class="brand-box">
+						<form method="GET" id="phone-finder-form">
+							{% csrf_token %}
+							<div class="brand-top">
+								<h6>BRANDS</h6>
+								
+							</div>
+							<div id="brand-selection">
+								<div class="btnradio">
+									<label>
+										<input type="radio" name="brands" >
+										<span><img src="{% static 'img/app.png' %}"></span>
+									</label>
+								</div>
+								
+								<div class="btnradio">
+									<label>
+										<input type="radio" name="brands" >
+										<span><img src="{% static 'img/sam.png' %}"></span>
+									</label>
+								</div>
+								
+								<div class="btnradio">
+									<label>
+										<input type="radio" name="brands" >
+										<span><img src="{% static 'img/acer.png' %}"></span>
+									</label>
+								</div>
+								<div class="btnradio">
+									<label>
+										<input type="radio" name="brands" >
+										<span><img src="{% static 'img/lenovo.png' %}"></span>
+									</label>
+								</div>
+								<div class="btnradio">
+									<label>
+										<input type="radio" name="brands" >
+										<span><img src="{% static 'img/dell.png' %}"></span>
+									</label>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					
+				
+
+				<!--CATEGORY SECTION --> <!-- inside col-md-3-->
+				<div class="row">
+					<div class="col-md-12 mt-3" style="margin-bottom: 50px;">
+						<div class="advertise-2">
+							<a href="https://www.findanlms.com/"><img src="{% static 'img/advs4.jpg' %}" style="width: 275px;"></a>
+
+						</div>
+					</div>
+				</div>
+
+
+				</div>
+
+
+				
+				<!--OPTIONS LIST STARTS
+				<div class="col-md-9 page-wrapper" style="width: 73%;
+				    flex: 0 0 73%;max-width: 73%; ">
+					<div class="product-slider">
+						<h5 class="slider-title">Recommended</h5>
+						<i class="fas fa-angle-left prev1"></i>
+						<i class="fas fa-angle-right next1"></i>
+						
+						<div class="product-wrapper" id="slideshow1">
+
+							<div class="product">
+	
+								<div class="slider-item">
+									<div class="item-img">
+										<img src="{% static 'r-images/smartphones/Samsung-M30.png' %}" />
+									</div>
+									
+									<div class="title">Samsung M30</div>
+									<div class="price">Rs.20,000</div>
+								</div>
+																
+							</div>
+	
+							<div class="product">
+								<div class="slider-item">
+									<div class="item-img">
+										<img src="{% static 'r-images/smartphones/Realme-X50-Pro.png' %}"/>
+									</div>
+									
+									<div class="title">Realme X50 Pro</div>
+									<div class="price">Rs.20,000</div>
+								</div>
+							
+							</div>
+							
+	
+							<div class="product">
+								
+								<div class="slider-item">
+									<div class="item-img">
+										<img src="{% static 'r-images/smartphones/Oppo-Reno3.png' %}"/>
+									</div>
+									
+									<div class="title">Oppo Reno3</div>
+									<div class="price">Rs.20,000</div>
+								</div>							
+								
+							</div>
+							
+	
+							<div class="product">
+								
+								<div class="slider-item">
+									<div class="item-img">
+										<img src="{% static 'r-images/smartphones/Iphone-Xr.png' %}"/>
+									</div>
+									
+									<div class="title">Iphone Xr</div>
+									<div class="price">Rs.20,000</div>
+								</div>
+							
+								
+							</div>
+							
+	
+							<div class="product">
+								
+								<div class="slider-item">
+									<div class="item-img">
+										<img src="{% static 'r-images/smartphones/Xiaomi-Mi10-Pro-5G.png' %}"/>
+									</div>
+									
+									<div class="title">Xiaomi Mi10 Pro 5G</div>
+									<div class="price">Rs.20,000</div>
+								</div>
+							
+							
+							</div>
+								
+	
+						</div>
+
+					</div>-->
+					
+					<!--second one-->
+					<!--<div class="row" style="margin-top:40px;">
+						<div class="col-md-12">
+							<div class="product-slider">
+								<h5 class="slider-title">Popularity</h5>
+								<i class="fas fa-angle-left prev2"></i>
+								<i class="fas fa-angle-right next2"></i>
+								
+								<div class="product-wrapper" id="slideshow2">
+		
+									<div class="product">
+			
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Iphone-11.png' %}" />
+											</div>
+											
+											<div class="title">Iphone 11</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+																		
+									</div>
+			
+									<div class="product">
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Oppo-A5s.png' %}"/>
+											</div>
+											
+											<div class="title">Oppo A5s</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Realme-5-Pro.png' %}"/>
+											</div>
+											
+											<div class="title">Realme 5 Pro</div>
+											<div class="price">Rs.20,000</div>
+										</div>							
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Samsung-A8+.png' %}"/>
+											</div>
+											
+											<div class="title">Samsung A8+</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Xiaomi-Mi-A3.png' %}"/>
+											</div>
+											
+											<div class="title">Xiaomi Mi A3</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									
+									</div>
+										
+			
+								</div>
+		
+							</div>
+
+								
+						</div>
+
+						
+					</div>-->
+					<!-- third one-->
+
+				<!--	<div class="row" style="margin-top:40px;">
+						<div class="col-md-12">
+							<div class="product-slider">
+								<h5 class="slider-title">Recently Added</h5>
+								<i class="fas fa-angle-left prev3"></i>
+								<i class="fas fa-angle-right next3"></i>
+								
+								<div class="product-wrapper" id="slideshow3">
+		
+									<div class="product">
+			
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Iphone-Xs-Max.png' %}" />
+											</div>
+											
+											<div class="title">Iphone Xs Max</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+																		
+									</div>
+			
+									<div class="product">
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Oppo-F11pro.png' %}"/>
+											</div>
+											
+											<div class="title">Oppo F11 Pro</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Realme-C2.png' %}"/>
+											</div>
+											
+											<div class="title">Realme C2</div>
+											<div class="price">Rs.20,000</div>
+										</div>							
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Samsung-S10+.png' %}"/>
+											</div>
+											
+											<div class="title">Samsung-S10+</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Xiaomi-Mi10-Pro-5G.png' %}"/>
+											</div>
+											
+											<div class="title">Xiaomi Mi10 Pro 5G</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									
+									</div>
+										
+			
+								</div>
+		
+							</div>
+
+								
+						</div>
+
+						
+					</div> -->
+
+					<!-- Fourth one-->
+					<!--<div class="row" style="margin-top:40px;">
+						<div class="col-md-12">
+							<div class="product-slider">
+								<h5 class="slider-title">Featured</h5>
+								<i class="fas fa-angle-left prev4"></i>
+								<i class="fas fa-angle-right next4"></i>
+								
+								<div class="product-wrapper" id="slideshow4">
+		
+									<div class="product">
+			
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Iphone-Xs-Max.png' %}" />
+											</div>
+											
+											<div class="title">Iphone Xs Max</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+																		
+									</div>
+			
+									<div class="product">
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Oppo-F11pro.png' %}"/>
+											</div>
+											
+											<div class="title">Oppo F11 Pro</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Realme-C2.png' %}"/>
+											</div>
+											
+											<div class="title">Realme C2</div>
+											<div class="price">Rs.20,000</div>
+										</div>							
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Samsung-S10+.png' %}"/>
+											</div>
+											
+											<div class="title">Samsung-S10+</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Xiaomi-Mi10-Pro-5G.png' %}"/>
+											</div>
+											
+											<div class="title">Xiaomi Mi10 Pro 5G</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									
+									</div>
+										
+			
+								</div>
+		
+							</div>
+
+								
+						</div>
+
+						
+					</div>-->
+
+					<!--fifth one-->
+					<!--<div class="row" style="margin-top:40px;">
+						<div class="col-md-12">
+							<div class="product-slider">
+								<h5 class="slider-title">Buyer's Guide</h5>
+								<i class="fas fa-angle-left prev5"></i>
+								<i class="fas fa-angle-right next5"></i>
+								
+								<div class="product-wrapper" id="slideshow5">
+		
+									<div class="product">
+			
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Iphone-Xs-Max.png' %}" />
+											</div>
+											
+											<div class="title">Iphone Xs Max</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+																		
+									</div>
+			
+									<div class="product">
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Oppo-F11pro.png' %}"/>
+											</div>
+											
+											<div class="title">Oppo F11 Pro</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Realme-C2.png' %}"/>
+											</div>
+											
+											<div class="title">Realme C2</div>
+											<div class="price">Rs.20,000</div>
+										</div>							
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Samsung-S10+.png' %}"/>
+											</div>
+											
+											<div class="title">Samsung-S10+</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+										
+									</div>
+									
+			
+									<div class="product">
+										
+										<div class="slider-item">
+											<div class="item-img">
+												<img src="{% static 'r-images/smartphones/Xiaomi-Mi10-Pro-5G.png' %}"/>
+											</div>
+											
+											<div class="title">Xiaomi Mi10 Pro 5G</div>
+											<div class="price">Rs.20,000</div>
+										</div>
+									
+									
+									</div>
+										
+			
+								</div>
+		
+							</div>
+
+								
+						</div>
+
+						
+					</div>
+
+					
+				</div> -->
+				<!--OPTIONS LIST ENDS-->
+
+			
+			</div>
+		</div>
+			
+		
+	
+	</div> 
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- slick -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<script src="{% static 'js/test.js' %}"></script>
+{% endblock %}

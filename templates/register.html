@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   {% load static %}
+
+   <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="container">
+        <a href="{% url 'home' %}" class="close">x</a>
+        <div class="signup__container">
+            <div class="container__child signup__thumbnail">
+                <div class="thumbnail__logo">
+                    <img class="logo__shape" width="110" height="95" src="{% static 'images/logo1.png' %}">
+
+                </div>
+                <div class="thumbnail__content text-center">
+                    <h1 class="heading--primary">GADGETRY MANTRA</h1>
+
+                    <h5 class="heading--secondary">A tech companion for a passionate tech enthusiast.</h5>
+                </div>
+
+
+                <div class="signup__overlay"></div>
+
+
+            </div>
+            <div class="container__child signup__form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        {{form.email}}
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        {{form.password1}}
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordRepeat">Repeat Password</label>
+                        {{form.password2}}
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"><a href="#" style="color:black" textdecoration:none>&nbsp;Terms and privacy</a>
+                        </label>
+
+
+                    </div>
+                    <div class="m-t-lg">
+                        <ul class="list-inline">
+                            <li>
+                                <input class="btn btn--form" type="submit" value="Register" />
+                            </li>
+                            {{form.errors}}
+                            <li>
+                                 <a class="login__link" href="{% url 'loginPage' %}">I already have an account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+

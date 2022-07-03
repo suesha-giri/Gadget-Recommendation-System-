@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+	.page-content
+{
+	min-height:100vh;
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+.items-name{
+	padding-left: 20px;
+	font-size: 14px;
+}
+.items-price{
+	padding-top: 40px;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 ">
+				{% if searched %}
+				<h2>Searched results for {{searched}} :</h2>
+				<div class="row">
+					
+					{% for gadget in gadgets %}
+					
+					<div class="col-md-6 mt-10">
+						
+						<div class="items">
+							<div class="items-img">
+								<img src="{{gadget.img.url}}" /><br>
+							</div>
+							<div class="items-name">{{gadget.name}}</div>
+							<br>
+						</div>
+					
+					</div>
+					<div class="col-md-6" >
+						<div class="items-price">
+							{{gadget.price}}
+						</div>
+					</div>
+					{% endfor %}
+					
+				</div>
+				
+				{% else %}
+				<h2>Hey! You forget to make a search..</h2>
+
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+{% endblock %}

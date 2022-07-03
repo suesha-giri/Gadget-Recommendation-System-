@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block styles %}
+
+<!-- Slick css -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+ 
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/specification.css' %}">
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="page-content">
+    <div class="container">
+		<div class="row">
+			<div class="col-md-5 mt-3">
+        		<ul class="breadcrumb breadcrumb-items ">z
+		            <li>
+		                <a href="{% url 'home' %}">Home</a>
+		            </li>
+		            
+		            <li class="active">
+		               <span>{{mob1.smartphone.name}}</span>
+		            </li>
+        		</ul>
+   			 </div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				
+				<div class="images">
+                    <div class="slider" style="margin-top:20px;"><img src="{% static 'img/Xiaomi Redmi 7A.png' %}" alt="img/Xiaomi Redmi 7A.jpg">
+                        
+                    </div> 
+                    <div class="slider-img" >
+                        
+                        <div class="img"><a href="{% static 'img/Xiaomi Redmi 7A.png' %}" target="slider"><img src="{% static 'img/small.png' %}"></a></div>
+                        
+                    
+                        <div class="img"><a href="{% static 'img/Xiaomi Redmi 7A1.png' %}" target="slider"><img src="{% static 'img/small1.png' %}"></a></div>
+                        
+                        
+                        <div class="img"><a href="{% static 'img/Xiaomi Redmi 7A2.png' %}" target="slider"><img src="{% static 'img/small2.png' %}"></a></div>
+                        
+                    </div>              
+                </div>
+			
+		   </div>
+		   <div class="col-md-7" style="margin-bottom: 50px; margin-top: 20px;">
+			
+			   
+		   		<h1>{{mob1.smartphone.name}}</h1>
+				 
+		   		<div class="review-rating1" style="margin-bottom: 10px;">
+                  	<span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="far fa-star"></i></span>
+                </div>
+		   		<div class="title">
+		   			Specifications
+		   		</div>
+		   		<div class="spec-details">
+		   			<table width="100%" >
+                                <tbody>
+                                    <tr>
+                                        <td width="15">Display </td>
+                                        <td width="151">{{mob1.display}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Processor</td>
+                                        <td>{{mob1.processor}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory </td>
+                                        <td>{{mob1.memory}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>{{mob1.camera}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>{{mob1.battery}}</td>
+                                    </tr>
+                                  <!-- <tr>
+                                        <td>Colors</td>
+                                        <td>Matte Black, Morning blue, Matte Blue, Matte Gold, Gem Red, Gem Blue</td>
+                                    </tr>-->
+                                    <tr>
+                                        <td>Price in Nepal (Rs.)</td>
+                                        <td>{{mob1.price}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+		   		</div>
+				 
+
+				
+				 
+		   	
+				<div class="row">
+					<div class="col-md-12">
+						           
+                                    <div class="product-reviews">
+                                    	<div class="title">
+		   										Reviews
+		   									</div>
+										
+		   									 
+		   								<div id="carousel" class="slider1">
+											 
+		   									<div class="slider-item">
+												{% if reviews %}
+												{% for review in reviews %}
+		                                        <div class="single-review">
+													
+		                                        	
+		                                            <div class="review-rating">
+		                                                <span><i class="fa fa-star{% if review.rate < 1 %}-o empty{% endif %}"></i></span>
+		                                                <span><i class="fa fa-star{% if review.rate < 2 %}-o empty{% endif %}"></i></span>
+		                                                <span><i class="fa fa-star{% if review.rate < 3 %}-o empty{% endif %}"></i></span>
+		                                                <span><i class="fa fa-star{% if review.rate < 4 %}-o empty{% endif %}"></i></span>
+		                                                <span><i class="fa fa-star{% if review.rate < 5 %}-o empty{% endif %}"></i></span>
+														
+		                                            </div>
+		                                            <div class="review-heading" style="display: flex;">
+		                                                <div><i class="fas fa-user"></i>&nbsp;{{review.user.username}}</div>
+		                                                <div><i class="fa fa-clock-o"></i> {{review.created_at}}</div>
+		                                                
+		                                            </div>
+		                    
+		                                            <div class="review-body">
+		                                                <p>{{review.comment}}</p>
+		                                            </div>
+													
+													
+		                                            <!-- <div class="votes">
+		                                            	<button id="likebtn"><i class="fa fa-thumbs-up"></i></button>
+		                                            	<input type="number" name="" value="0">
+		                                            	<button id="dislikebtn"><i class="fa fa-thumbs-down"></i></button>
+		                                            	<input type="number" name="" value="0">
+		                                            </div> -->
+		                                        </div>
+												{% endfor %}
+												{% else %}
+												<div class="content">No reviews yet!!</div>
+												
+												{% endif %}
+		                    
+		                                        
+		                                    
+		                                   
+		                                    </div>
+											
+		                                  
+		                                    
+	                                    </div>
+										
+	                                    
+		                                    <i class="fa fa-angle-double-left prev1" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-right next1" aria-hidden="true"></i>
+										
+                    
+                                    </div>
+
+								
+
+					</div>
+
+                    
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+
+
+                        <div class="reviews-form">
+                    
+                                    
+                                        <h5 style="font-weight:600; font-size:18px;">Write your review</h5>
+										
+										{% if messages %}
+											{% for message in messages %}
+										 		<div class="alert alert{{message.tags}}" role="alert">
+											 		{{message}}
+										 		</div>
+										 	{% endfor %}
+										{% endif %}
+                        
+                                        <form class="review-form" action="{% url 'addComment' mob1.id %}"  method="POST">
+											{% csrf_token %}
+                                            <div class="form-group" style="display: flex;"> 
+											
+                                            <textarea name="comment" class="input" cols="45" placeholder="Your Review"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-rating"  style="display: flex;">
+                                                    <strong class="text" style="font-size: 15px;">Your Rating : </strong>
+                                                    <div class="stars">
+														<input type="radio" name="rate" id="rate-5" value="5" /><label for="rate-5" class="fa fa-star"></label>
+                                                        
+                                                        <input type="radio" name="rate" id="rate-4" value="4" /><label for="rate-4" class="fa fa-star"></label>
+                                                        
+                                                        <input type="radio" name="rate" id="rate-3" value="3" /><label for="rate-3" class="fa fa-star"></label>
+                                                        
+                                                        <input type="radio" name="rate" id="rate-2" value="2" /> <label for="rate-2" class="fa fa-star"></label>
+                                                       
+                                                        <input type="radio" name="rate" id="rate-1" value="1" /><label for="rate-1" class="fa fa-star"></label> 
+                                                       
+                        
+                                                    </div>
+												</div>
+                        
+                                                
+                        
+                                            </div>
+											{% if user.id is not None%}
+                                            <button  type="submit" class="btn btn-outline-primary">Add Review</button>
+											{% else %}
+											 <p style="color: #004e64;"> You must be logged in to post a review.</p>
+											 {% endif %}
+                                        </form>
+                        </div>
+                     </div>
+                            
+                    
+                                
+                            </div>
+					</div>
+					
+				</div>
+						   
+			</div>
+	    </div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider-img a').mouseover(function(e){
+            e.preventDefault();
+            $('.slider img').attr("src",$(this).attr("href"));
+        })
+    })
+ var letters = ['1','2','3','4','5','6','7','8','9','10'];
+$('.slider1').slick({
+ 
+  infinite: false,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true,
+
+   nextArrow: $('.next1'),
+   prevArrow: $('.prev1'),
+   dots: true,
+   customPaging : function(slider, i) {
+   var thumb = $(slider.$slides[i]).data();
+   return '<a>'+letters[i]+'</a>';
+            }
+});
+
+
+</script>
+
+{% endblock %}

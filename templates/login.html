@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+   <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="container">
+        <a href="{% url 'home' %}" class="close">x</a>
+        <div class="login__container">
+            <div class="container__child login__thumbnail">
+
+
+                <div class="thumbnail__logo">
+                    <img class="logo__shape" width="110" height="95" src="{% static 'images/logo1.png' %}">
+
+
+                </div>
+
+                 <div class="thumbnail__content text-center">
+                    <h1 class=" heading--primary">GADGETRY MANTRA</h1>
+
+                    <h5 class="heading--secondary">Lets explore the technology, together.</h5>
+                </div>
+
+                <div class="login__overlay"></div>
+            </div>
+            <div class="container__child login__form">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username"> Username</label>
+                        <input class="form-control" type="text" name="username" id="username" placeholder="username" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+
+
+                    </div>
+
+                    <div class="m-t-lg">
+                        <ul class="list-inline">
+                            <li>
+                                <input class="btn btn--form" type="submit" value="Log In" />
+                            </li>
+                            <li>
+                                <a class="password__link" href="{% url 'password_reset' %}">Forgot Password?</a>
+                            </li>
+
+                    {% for message in messages %} <!--it is thrown away in login page -->
+                        <p id="messages">{{message}}</p>
+                    {% endfor %}
+
+                            <li>
+                                <a class="signup__link" href="{% url 'register' %}">Don't have an account?</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+				
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
